@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CityInfo from './components/CityInfo';
 import MainAttraction from './components/MainAttraction';
@@ -18,13 +18,13 @@ const App = () =>
           <li><Link to="/photos">Фотографії міста</Link></li>
         </ul>
       </nav>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/city-info" component={CityInfo} />
-        <Route path="/main-attraction" component={MainAttraction} />
-        <Route path="/other-attractions" component={OtherAttractions} />
-        <Route path="/photos" component={Photos} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/city-info" element={<CityInfo />} />
+        <Route path="/main-attraction" element={<MainAttraction />} />
+        <Route path="/other-attractions" element={<OtherAttractions />} />
+        <Route path="/photos" element={<Photos />} />
+      </Routes>
     </div>
   );
 };
